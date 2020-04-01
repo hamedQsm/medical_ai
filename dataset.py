@@ -66,3 +66,19 @@ pyplot.figure(dpi=300)
 pyplot.axes().set_aspect('equal', 'datalim')
 pyplot.set_cmap(pyplot.gray())
 pyplot.pcolormesh(z, y, np.flipud(ArrayDicom[200, :, :]))
+
+from matplotlib import pyplot as plt
+from mpl_toolkits import mplot3d
+
+_x = []
+_y = []
+_z = []
+threshold = np.quantile(np.array(ArrayDicom), .995)
+for i, img in enumerate(ArrayDicom):
+    indices = np.where(img>threshold)
+    _x.extend(indices[0])
+    _y.extend(indices[1])
+    _z.extend(len(indices[0])*[i])
+
+ax = plt.axes(projection='3d')
+ax.scatter(_x, _y, _z, s=0.001, c='black')    
