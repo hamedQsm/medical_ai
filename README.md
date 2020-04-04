@@ -1,4 +1,4 @@
-# Medical AI
+# Medical AI for [COVID-19](https://www.google.com/covid19/)
 
 Supervised calsification patients in covid19, Community acquired pneumonia (CAP) and other non-pneumonia by CT dicom files exams.
 
@@ -38,7 +38,7 @@ Dimension is 2D and dicom files count is as channel count:
 	dim=(512, 512), n_channels=488,
 ```
 
-### train_model.py
+### 3. train_model.py
 
 Load train and validation IDs and labels as Dict:
 ```
